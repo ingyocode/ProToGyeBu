@@ -7,6 +7,7 @@ import { ConfigService } from '@nestjs/config';
 @Module({
   imports: [HttpModule],
   providers:[SportService, ConfigService],
-  controllers:[SportController]
+  controllers:[SportController],
+  exports: [SportService]
 })
 export class SportModule {}

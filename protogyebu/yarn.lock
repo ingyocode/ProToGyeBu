@@ -187,12 +187,21 @@
     "@angular-eslint/bundled-angular-compiler" "15.0.0"
     "@typescript-eslint/utils" "5.43.0"
 
-"@angular/animations@~15.2.0":
+"@angular/animations@^15.2.8":
   version "15.2.8"
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-15.2.8.tgz#11de2b0e7fc50918056bdc6d7545ea1864a8592d"
   integrity sha512-I3xh8EASQ04s3qXQYpIORI0jFiFmvBQERBqS70TieTCIML7banOf9R3K7sAWB9frG5J0CEUwr+wtF47DCs/7eQ==
   dependencies:
     tslib "^2.3.0"
+
+"@angular/cdk@^15.2.8":
+  version "15.2.8"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-15.2.8.tgz#f7da13abd6fb6a1355c02f5c02dc32bc679c4b1d"
+  integrity sha512-jiCoxfBFMH29IZIiPmVUzIWetfUNpMIvC20xYVF8RMM819vPogoObzwK4DN/sXcp/6oVbBzZFaYdijhhIt9soQ==
+  dependencies:
+    tslib "^2.3.0"
+  optionalDependencies:
+    parse5 "^7.1.2"
 
 "@angular/cli@~15.2.0":
   version "15.2.6"
@@ -266,6 +275,13 @@
   version "15.2.8"
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-15.2.8.tgz#f37fb8b020c9d0fccf1bb5b46db525b67084cc9c"
   integrity sha512-3wlaJrpxe8ZLe7ZGIOs/Z++kgJMOHZCUvdXLyp/4t1ejULgUgW9yi7nGsemWnSzsUCjf7595BP1Cp1gA/J/1QQ==
+
+"@angular/material@^14.2.7":
+  version "14.2.7"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-14.2.7.tgz#678c657197268eba6814c757152f8d178ff08866"
+  integrity sha512-WXHh8pEStpgkXZJmYOg2cI8BSHkV82ET4XTJCNPdveumaCn1UYnaNzsXD13kw5z+zmy8CufhFEzdXTrv/yt7KQ==
+  dependencies:
+    tslib "^2.3.0"
 
 "@angular/platform-browser-dynamic@~15.2.0":
   version "15.2.8"
@@ -7971,6 +7987,11 @@ lru-cache@^9.0.0:
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-9.1.1.tgz#c58a93de58630b688de39ad04ef02ef26f1902f1"
   integrity sha512-65/Jky17UwSb0BuB9V+MyDpsOtXKmYwzhyl+cOa9XUiI4uV2Ouy/2voFP3+al0BjZbJgMBD8FojMpAf+Z+qn4A==
 
+luxon@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-3.3.0.tgz#d73ab5b5d2b49a461c47cedbc7e73309b4805b48"
+  integrity sha512-An0UCfG/rSiqtAIiBPO0Y9/zAnHUZxAMiCpTd5h2smgsj7GGmcenvrvww2cqNA8/4A5ZrD1gJpHN2mIHZQF+Mg==
+
 magic-string@0.29.0:
   version "0.29.0"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.29.0.tgz#f034f79f8c43dba4ae1730ffb5e8c4e084b16cf3"
@@ -8851,7 +8872,7 @@ parse5@^6.0.1:
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-6.0.1.tgz#e1a1c085c569b3dc08321184f19a39cc27f7c30b"
   integrity sha512-Ofn/CTFzRGTTxwpNEs9PP93gXShHcTq255nzRYSKe8AkVpZY7e1fpmTfOyoIvjP5HG7Z2ZM7VS9PPhQGW2pOpw==
 
-parse5@^7.0.0, parse5@^7.1.1:
+parse5@^7.0.0, parse5@^7.1.1, parse5@^7.1.2:
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-7.1.2.tgz#0736bebbfd77793823240a23b7fc5e010b7f8e32"
   integrity sha512-Czj1WaSVpaoj0wbhMzLmWD69anp2WH7FXMB9n1Sy8/ZFF9jolSQVMu1Ij5WIyGmcBmhk7EOndpO4mIpihVqAXw==

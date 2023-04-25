@@ -6,13 +6,14 @@
 import { Logger } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
 
-import { AppModule } from "./app/app.module";
+import { AppModule } from "./app.module";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const globalPrefix = "api";
   app.setGlobalPrefix(globalPrefix);
+  app.enableCors()
   const config = new DocumentBuilder()
     .setTitle('test example')
     .setDescription('The Test API description')
