@@ -1,10 +1,9 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
-import {SportController} from "./sports.controller";
-import compression from 'compression';
-import {SportModule} from '@protogyebu/backend'
+import { Module } from '@nestjs/common';
+import { SportController } from './sports.controller';
+import { SportModule } from '@protogyebu/backend';
 
 @Module({
   imports: [SportModule],
-  controllers:[SportController],
+  controllers: [SportController],
 })
-export class SportControllerModule {}
+export class SportControllerModule { }

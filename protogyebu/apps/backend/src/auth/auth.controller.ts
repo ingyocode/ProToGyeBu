@@ -7,5 +7,7 @@ import { AuthService } from '@protogyebu/backend';
 export class AuthController {
     constructor(private readonly authService: AuthService) { }
     @Post()
-    signIn() { }
+    signIn() {
+        this.authService.signIn();
+    }
 }

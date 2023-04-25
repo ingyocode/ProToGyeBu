@@ -2,7 +2,7 @@ import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { catchError, firstValueFrom } from 'rxjs';
-import { GameInterface } from '../interfaces'
+import { GameInterface } from './interfaces'
 import { GetSportsQueryInterface } from './interfaces'
 
 @Injectable()
