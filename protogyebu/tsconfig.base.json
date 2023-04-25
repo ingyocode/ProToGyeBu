@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@protogyebu/backend":["libs/backend/src/index.ts"],
-      "@protogyebu/models":["libs/models/src/index.ts"]
+      "@protogyebu/models":["libs/models/src/index.ts"],
+      "@protogyebu/globals":["libs/globals/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

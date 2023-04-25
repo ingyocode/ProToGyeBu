@@ -1,15 +1,16 @@
-import { Column, CreateDateColumn, Entity, Index, PrimaryColumn, UpdateDateColumn } from 'typeorm'
+import { Column, CreateDateColumn, Entity, Index, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
 import { UsersInterface } from './interfaces'
 
 @Entity('users')
 export class UsersEntity implements UsersInterface {
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn()
     id: number;
 
     @Index()
-    @Column({ type: 'varchar', nullable: true })
+    @Column({ type: 'varchar', nullable: true, unique: true })
     uid: string;
 
+    @Index()
     @Column({ type: 'varchar' })
     email: string;
 
@@ -22,6 +23,7 @@ export class UsersEntity implements UsersInterface {
     @Column({ type: 'varchar' })
     name: string;
 
+    @Index()
     @Column({ type: 'boolean' })
     isDeleted: boolean;
 
