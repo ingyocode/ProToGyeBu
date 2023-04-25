@@ -1,9 +1,9 @@
 export interface UsersInterface {
-    id: number;
+    id?: number;
     uid: string;
     email: string;
     password: string;
-    encKey: string;
+    encKey?: string;
     name: string;
     isDeleted: boolean;
     createdAt: Date;

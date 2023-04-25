@@ -30,7 +30,6 @@ export class SportService {
         maxBodyLength: Infinity
       })
     )
-    console.log(result.data)
     return <GameInterface[]>result.data
   }
 }

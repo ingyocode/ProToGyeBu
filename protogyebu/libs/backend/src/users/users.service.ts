@@ -24,7 +24,6 @@ export class UsersService {
         }
     }
     encodeId(id: number): string {
-        console.log(this.configService.get<string>('HASH_KEY'))
         return this.hashidsForUid.encode(id);
     }
 
@@ -52,9 +51,7 @@ export class UsersService {
             encKey: buffer,
             password: encryptPassword,
         });
-        console.log(entity)
         entity.uid = this.encodeId(entity.id);
-        console.log(this.encodeId(entity.id))
         await this.usersRepository.update({ id: entity.id }, { uid: entity.uid })
         return entity;
     }
