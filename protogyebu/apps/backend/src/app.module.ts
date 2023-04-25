@@ -1,8 +1,7 @@
 import { Module } from '@nestjs/common';
-import { SportController } from './sports/sports.controller';
 import { SportControllerModule } from './sports/sports.controller.module';
 import { AuthModule, SportModule, UsersModule } from '@protogyebu/backend';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConfigModule } from '@nestjs/config';
 import { UsersControllerModule } from './users/users.controller.module';
 import { AuthControllerModule } from './auth/auth.controller.module';
 import { GlobalJwtModule, GlobalTypeOrmModule } from '@protogyebu/globals'
@@ -19,6 +18,5 @@ import { GlobalJwtModule, GlobalTypeOrmModule } from '@protogyebu/globals'
     SportControllerModule,
     AuthControllerModule
   ],
-  controllers: [SportController],
 })
 export class AppModule { }
