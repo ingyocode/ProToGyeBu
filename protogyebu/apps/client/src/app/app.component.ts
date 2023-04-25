@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from './app.service';
+import { AppService } from '../services/app.service';
 import {GameInterface} from '@protogyebu/backend'
 @Component({
   selector: 'protogyebu-root',
@@ -14,7 +14,8 @@ export class AppComponent implements OnInit {
   constructor(private readonly appService: AppService) {}
 
   dataSource:TableData[] = []
-  displayedColumns: string[] = ['gameName', 'fieldName', 'homeTeam', 'homePoint','awayPoint','awayTeam'];
+  pageSize: number = 0;
+  displayedColumns: string[] = ['gameName', 'gameStatus', 'homeTeam', 'homePoint','awayPoint','awayTeam'];
 
   sports() {
     const data: TableData[] = []
@@ -22,7 +23,7 @@ export class AppComponent implements OnInit {
       res.list.forEach((game) => {
         data.push({
           gameName: game?.league?.leagueCode,
-          fieldName: game?.field?.nameMain,
+          gameStatus: game?.periodType,
           homeTeam: game?.home?.team?.nameMain,
           homePoint: game?.home?.result,
           homeWin: game?.home?.wlt,
@@ -35,6 +36,7 @@ export class AppComponent implements OnInit {
         console.log(game?.home?.wlt)
       })
       this.dataSource = data;
+      this.pageSize = res.pagingInfo.pageSize;
       console.log(res)
     })
   }
@@ -50,7 +52,7 @@ export interface ResponseData {
 }
 interface TableData {
   gameName: string;
-  fieldName: string;
+  gameStatus: string;
   homeTeam: string;
   homeIcon: string;
   homeWin: string;

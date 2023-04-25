@@ -9,7 +9,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
-import { AppService } from './app.service';
+import { AppService } from '../services/app.service';
 
 @NgModule({
   declarations: [AppComponent],

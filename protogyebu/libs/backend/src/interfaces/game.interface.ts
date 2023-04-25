@@ -9,6 +9,7 @@ export interface ResponseData {
   export interface GameInterface {
     gameId: number;
     // gameName: string;
+    periodType: string;
     gamePlayType: string; // TODO enum
     gameRoundStatus: GameRoundInterface[];
     league: LeagueInterface;
