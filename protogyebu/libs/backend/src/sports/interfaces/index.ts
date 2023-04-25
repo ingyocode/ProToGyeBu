@@ -1,0 +1,1 @@
+export * from './get-sports-query.interface';

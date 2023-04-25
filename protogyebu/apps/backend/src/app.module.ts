@@ -1,9 +1,10 @@
-import { Module } from "@nestjs/common";
-import { SportController } from "./sports/sports.controller";
-import { SportModule } from "./sports/sports.module";
+import { Module } from '@nestjs/common';
+import { SportController } from './sports/sports.controller';
+import { SportControllerModule } from './sports/sports.controller.module';
+import { SportModule } from '@protogyebu/backend';
 
 @Module({
-  imports: [SportModule],
-  controllers: [SportController]
+  imports: [SportModule, SportControllerModule],
+  controllers: [SportController],
 })
-export class AppModule {}
+export class AppModule { }

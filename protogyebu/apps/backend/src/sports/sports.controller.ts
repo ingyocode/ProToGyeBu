@@ -1,16 +1,14 @@
-import {Controller, Get} from '@nestjs/common';
-import {ApiOperation} from "@nestjs/swagger";
-import {SportService} from "./sports.service";
+import { Controller, Get, Query } from '@nestjs/common';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { SportService, GetSportsQueryInterface } from '@protogyebu/backend';
 
+@ApiTags('sports')
 @Controller('sports')
 export class SportController {
-  constructor(
-    private readonly sportService:SportService
-  ) {
-  }
-  @ApiOperation({summary:"테스트용 GET",description:"정상적으로 작동하는지 확인시켜줌"})
-  @Get('')
-  async getSportList() {
-    return await this.sportService.getSports();
+  constructor(private readonly sportService: SportService) { }
+  @ApiOperation({ summary: 'SPORT 경기 정보 조회', description: '기간 내의 스포츠 정보 조회' })
+  @Get()
+  async getSportList(@Query() query: GetSportsQueryInterface) {
+    return await this.sportService.getSports(query);
   }
 }
