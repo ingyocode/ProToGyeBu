@@ -6,6 +6,7 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { randomBytes, pbkdf2Sync } from "crypto";
 import Hashids from 'hashids';
 import { ConfigService } from "@nestjs/config";
+
 @Injectable()
 export class UsersService {
     hashidsForCursor: Hashids;
