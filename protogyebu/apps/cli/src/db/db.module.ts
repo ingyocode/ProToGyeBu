@@ -1,7 +1,7 @@
 import { Module } from "@nestjs/common";
 import { DbService } from "./db.service";
 import { GlobalTypeOrmModule } from '@protogyebu/globals'
-import { ConfigModule, ConfigService } from "@nestjs/config";
+import { ConfigModule } from "@nestjs/config";
 @Module({
     imports: [ConfigModule, GlobalTypeOrmModule],
     providers: [DbService],

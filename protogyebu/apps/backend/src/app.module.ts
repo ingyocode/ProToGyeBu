@@ -5,7 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import { UsersControllerModule } from './users/users.controller.module';
 import { AuthControllerModule } from './auth/auth.controller.module';
 import { GlobalJwtModule, GlobalTypeOrmModule } from '@protogyebu/globals'
-import { APP_GUARD } from '@nestjs/core';
+import { BettingsControllerModule } from './bettings/bettings.controller.module';
 @Module({
   imports: [
     ConfigModule,
@@ -17,7 +17,8 @@ import { APP_GUARD } from '@nestjs/core';
 
     UsersControllerModule,
     SportControllerModule,
-    AuthControllerModule
+    AuthControllerModule,
+    BettingsControllerModule
   ],
   providers: [JwtStrategy]
 })

@@ -1,5 +1,6 @@
-import { Column, CreateDateColumn, Entity, Index, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
+import { Column, CreateDateColumn, Entity, Index, OneToMany, OneToOne, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
 import { UsersInterface } from './interfaces'
+import { BettingsInterface } from '../bettings/interfaces';
 
 @Entity('users')
 export class UsersEntity implements UsersInterface {
@@ -32,4 +33,7 @@ export class UsersEntity implements UsersInterface {
 
     @UpdateDateColumn()
     updatedAt: Date;
+
+    @OneToMany('BettingsEntity', 'user')
+    bettings?: BettingsInterface[]
 }

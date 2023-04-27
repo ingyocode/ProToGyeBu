@@ -1,5 +1,7 @@
-import { UsersEntity } from '../../../models';
+import { BettingsEntity, SportsEntity, UsersEntity } from '../../../models';
 
 export const entities = [
-    UsersEntity
-]
+    UsersEntity,
+    BettingsEntity,
+    SportsEntity,
+];
