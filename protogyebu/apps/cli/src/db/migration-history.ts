@@ -95,7 +95,7 @@ const bettingsTable: MigrationFunctionInterface = async (queryRunner: QueryRunne
                     { name: 'users_id', type: 'int' },
                     { name: 'status', type: 'boolean', default: false },
                     { name: 'betting_amount', type: 'int' },
-                    { name: 'result_amount', type: 'int' },
+                    { name: 'drainage', type: 'float' },
                     { name: 'is_deleted', type: 'boolean', default: false },
                     { name: 'created_at', type: 'date', default: 'CURRENT_TIMESTAMP' },
                     {

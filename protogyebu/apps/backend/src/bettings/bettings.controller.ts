@@ -1,12 +1,12 @@
 import { Controller, Get, Post, Put, UseGuards, Request, Body, HttpException, HttpStatus } from "@nestjs/common";
-import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
+import { ApiBearerAuth, ApiOperation, ApiTags } from "@nestjs/swagger";
 import { BettingsService, JwtAuthGuard } from "@protogyebu/backend";
 import { PostBettingsDto } from "./dtos";
 
 @ApiTags('bettings')
 @Controller('bettings')
 @UseGuards(JwtAuthGuard)
-@ApiBearerAuth('token')
+@ApiBearerAuth()
 export class BettingsController {
     constructor(private readonly bettingsService: BettingsService) { }
     @Get()
@@ -16,6 +16,9 @@ export class BettingsController {
         return await this.bettingsService.get(req.user.uid)
     }
 
+    @ApiOperation({
+        summary: '내역 생성'
+    })
     @Post()
     async create(
         @Request() req,
@@ -31,18 +34,24 @@ export class BettingsController {
         })
     }
 
+    @ApiOperation({
+        summary: '내역 수정'
+    })
     @Put()
     update(
         @Request() req,
         @Body() body
     ) {
-        console.log('')
+        return '만드는 중'
     }
 
-    @Post()
+    @ApiOperation({
+        summary: '내역 삭제'
+    })
+    @Post('delete')
     delete(
         @Request() req
     ) {
-        console.log('asdf')
+        return '만드는 중'
     }
 }

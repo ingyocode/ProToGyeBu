@@ -1,8 +1,9 @@
-import { GamesInterface } from "@protogyebu/models";
+import { SportsInterface } from "@protogyebu/models";
+import { CreateSportsInterface } from "../../sports";
 
 export interface CreateBettingInterface {
     userId: number;
     bettingAmount: number;
-    resultAmount: number;
-    games: GamesInterface[]
+    drainage: number;
+    games: CreateSportsInterface[]
 }

@@ -1,10 +1,10 @@
 import { Column, Entity, Index, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { BettingType, GamesInterface } from './interfaces'
+import { BettingType, SportsInterface } from './interfaces'
 import { BettingsEntity } from '../bettings';
 import { BettingsInterface } from '../bettings/interfaces';
 
 @Entity('sports')
-export class SportsEntity implements GamesInterface {
+export class SportsEntity implements SportsInterface {
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -18,7 +18,7 @@ export class SportsEntity implements GamesInterface {
 
     @Index()
     @Column({ type: 'varchar', nullable: true })
-    gameId: string;
+    sportsId: string;
 
     @Column({ type: 'varchar' })
     bettingType: BettingType;

@@ -4,7 +4,7 @@ import { ConfigService } from '@nestjs/config';
 import { firstValueFrom } from 'rxjs';
 import { GetSportsQueryInterface, CreateSportsInterface } from './interfaces'
 import { InjectRepository } from '@nestjs/typeorm';
-import { GamesInterface, SportsEntity } from '@protogyebu/models';
+import { SportsInterface, SportsEntity, BettingType } from '@protogyebu/models';
 import { Repository } from 'typeorm';
 import Hashids from 'hashids';
 
@@ -66,12 +66,9 @@ export class SportService {
     return result.data
   }
 
-  async createGameForBetting(param: CreateSportsInterface[]): Promise<GamesInterface[]> {
-    console.log(param)
-    const sports = await this.sportsRepository.save({
-      ...param
-    })
-    const sportsIds = []
+  async createGameForBetting(param: CreateSportsInterface[]): Promise<SportsInterface[]> {
+    const sports = await this.sportsRepository.save(param)
+    const sportsIds = [];
     sports.forEach((sport) => {
       sport.uid = this.encodeId(sport.id)
       sportsIds.push(this.sportsRepository.update({ id: sport.id }, { uid: sport.uid }));

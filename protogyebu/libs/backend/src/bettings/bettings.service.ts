@@ -34,7 +34,8 @@ export class BettingsService {
         return await this.bettingsRepository.find({
             where: {
                 usersId: this.decodeUid(userId)
-            }
+            },
+            relations: ['sports']
         });
     }
 
@@ -43,15 +44,13 @@ export class BettingsService {
             const bettings = await this.bettingsRepository.save({
                 usersId: param.userId,
                 bettingAmount: param.bettingAmount,
-                resultAmount: param.resultAmount,
+                drainage: param.drainage,
             });
             param.games.forEach((game) => {
                 game.bettingsId = bettings.id
             })
-            console.log(param.games)
-            await this.sportsService.createGameForBetting({
-                ...param.games
-            })
+            console.log(...param.games)
+            await this.sportsService.createGameForBetting(param.games)
 
             bettings.uid = this.encodeId(bettings.id);
             await this.bettingsRepository.update({ id: bettings.id }, { uid: bettings.uid });

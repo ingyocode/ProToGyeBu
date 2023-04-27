@@ -4,7 +4,7 @@ export interface BettingsInterface {
     usersId: number;
     status: boolean;
     bettingAmount: number;
-    resultAmount: number;
+    drainage: number;
     isDeleted: Boolean;
     createdAt: Date;
     updatedAt: Date;

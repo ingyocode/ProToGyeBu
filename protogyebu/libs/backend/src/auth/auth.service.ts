@@ -21,7 +21,7 @@ export class AuthService {
         });
 
         if (!user) {
-            throw new HttpException('존재하지 않은 유저입니다.', HttpStatus.BAD_REQUEST)
+            throw new HttpException('존재하지 않는 유저입니다.', HttpStatus.BAD_REQUEST)
         }
 
         const encryptPassword =

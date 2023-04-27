@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, Index, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
 import { BettingsInterface } from './interfaces'
 import { UsersEntity, UsersInterface } from '../users';
-import { GamesInterface } from '../sports';
+import { SportsInterface } from '../sports';
 
 @Entity('bettings')
 export class BettingsEntity implements BettingsInterface {
@@ -22,8 +22,8 @@ export class BettingsEntity implements BettingsInterface {
     @Column({ type: 'int' })
     bettingAmount: number;
 
-    @Column({ type: 'int' })
-    resultAmount: number;
+    @Column({ type: 'float' })
+    drainage: number;
 
     @Index()
     @Column({ type: 'boolean' })
@@ -40,5 +40,5 @@ export class BettingsEntity implements BettingsInterface {
     user?: UsersInterface;
 
     @OneToMany('SportsEntity', 'betting')
-    sports?: GamesInterface[]
+    sports?: SportsInterface[]
 }
