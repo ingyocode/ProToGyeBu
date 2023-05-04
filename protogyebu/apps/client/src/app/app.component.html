@@ -1,0 +1,55 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z10" style="width: 100%">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="gameName">
+    <th mat-header-cell *matHeaderCellDef> gameName </th>
+    <td mat-cell *matCellDef="let element"> {{element.gameName}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="gameStatus">
+    <th mat-header-cell *matHeaderCellDef> 게임 상태 </th>
+    <td mat-cell *matCellDef="let element"> {{element.gameStatus}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="homeTeam">
+    
+    <th mat-header-cell *matHeaderCellDef> 홈팀 </th>
+    <td mat-cell *matCellDef="let element"> <img src={{element.homeIcon}} style="width:10%"> {{element.homeTeam}} </td>
+
+  </ng-container>
+
+  <ng-container matColumnDef="homePoint">
+    <th mat-header-cell *matHeaderCellDef> 점수 </th>
+    <td [ngStyle]="{'color': (element.homeWin) === 'W' ? 'red' : 'black'}" mat-cell *matCellDef="let element"> {{element.homePoint}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="awayPoint">
+    <th mat-header-cell *matHeaderCellDef> 점수 </th>
+    <td [ngStyle]="{'color': (element.awayWin)=== 'W' ? 'red' : 'black'}" mat-cell *matCellDef="let element"> {{element.awayPoint}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="awayTeam">
+    <td mat-cell *matCellDef="let element"> <img src={{element.awayIcon}} style="width:10%">{{element.awayTeam}} </td>
+    <th mat-header-cell *matHeaderCellDef> 원정팀 </th>
+
+  </ng-container>
+
+
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator
+[length]="pageSize"
+[pageSize]="10"
+aria-label="Select page"
+[showFirstLastButtons]="true"
+>
+</mat-paginator>
